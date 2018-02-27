@@ -6957,3 +6957,16 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important; } }
+
+.dc-nav {
+  height: 100px;
+  background-color: transparent !important;
+  padding: 3em 3em;
+  font-size: 20px; }
+
+.dc-nav-right {
+  position: absolute;
+  right: 100px; }
+
+.nav-link {
+  color: #3498db; }

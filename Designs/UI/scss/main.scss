@@ -1,3 +1,21 @@
 // Bring in Bootstrap
 @import 'vendor/bootstrap';
 @import 'vendor/variables';
+
+$nav-height: 100px;
+$dc-blue: #3498db;
+$main-color: #fff;
+
+.dc-nav{
+    height: $nav-height;
+    background-color: transparent !important;
+    padding: 3em 3em;
+    font-size: 20px;
+}
+.dc-nav-right{
+    position: absolute;
+    right: 100px;
+}
+.nav-link{
+    color: $dc-blue;
+}
