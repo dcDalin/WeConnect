@@ -117,11 +117,6 @@ button, input[type=button], input[type=submit], input[type=reset]{
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
-.dc-form{
-    margin: auto;
-    width: 90%;
-    padding: 15px 22px 15px 15px;
-}
   
 button, input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
     background-color: #39ace7;
@@ -135,7 +130,7 @@ button, input[type=button]:active, input[type=submit]:active, input[type=reset]:
     transform: scale(0.95);
 }
   
-input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email] {
+  input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email] {
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;
@@ -145,7 +140,7 @@ input[type=text], input[type=tel], input[type=number], input[type=password], inp
     display: inline-block;
     font-size: 16px;
     margin: 5px;
-
+    width: 85%;
     border: 2px solid #f6f6f6;
     -webkit-transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
