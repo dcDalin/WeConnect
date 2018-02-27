@@ -6958,15 +6958,31 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #ddd !important; } }
 
-.dc-nav {
-  height: 100px;
-  background-color: transparent !important;
+/* customize default bootstrap4 nav */
+.navbar {
+  width: 100%;
+  background: none !important;
   padding: 3em 3em;
-  font-size: 20px; }
-
-.dc-nav-right {
-  position: absolute;
-  right: 100px; }
-
-.nav-link {
-  color: #3498db; }
+  font-size: 18px;
+  /* change nav link colors to $dc-blu */
+  /* change the effect of active or hovered links */ }
+  @media (max-width: 34em) {
+    .navbar {
+      background: #fff !important; } }
+  .navbar .navbar-toggler {
+    cursor: pointer;
+    outline: 0; }
+  .navbar .nav-item {
+    padding: 0 1rem; }
+    @media (max-width: 34em) {
+      .navbar .nav-item {
+        padding: 0; } }
+    .navbar .nav-item .nav-link {
+      color: #3498db; }
+      @media (max-width: 34em) {
+        .navbar .nav-item .nav-link {
+          font-weight: normal;
+          color: #fff !important; } }
+  .navbar .nav-item.active .nav-link,
+  .navbar .nav-item:hover .nav-link {
+    border-bottom: 3px solid #3498db; }
