@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>WeConnect | Home</title>
+
+        <!-- Bootstrap core CSS -->   
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+
+    <body>  
+        <nav class="navbar navbar-expand-md">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" height="60" alt="">
+            </a>  
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link text-primary" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="login.html">Login</a>
+                        <a class="dropdown-item" href="signup.html">Signup</a>
+                    </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="dc-box-wrapper">
+                            <div class="row">
+                                <div class="col-sm-2">
+                                    <img height="80" src="images/search.png " alt="">
+                                </div>
+                                <div class="col-sm">
+                                    <form class="form-inline">
+                                        <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Business Name">
+                                        <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Category">
+                                        <button type="submit" class="btn btn-primary mb-2 search-btn">Search</button>
+                                    </form>
+                                </div>
+                                <div class="col-sm-2">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+
+                        <div class="dc-box-wrapper">
+                            <section>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <br>
+                                            <div class="media"> <!-- /. media -->
+                                                <img class="business-logo" src="images/logos/cic.jpg">
+                                                <div class="media-body">
+                                                    <div class="business-name">
+                                                       <a href="view-business.html">CIC Insurance</a>
+                                                        <small>- Service Industry</small>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- /. media -->
+                                            <div class="media"> <!-- /. media -->
+                                                <img class="business-logo" src="images/logos/kenyapower.png">
+                                                <div class="media-body">
+                                                    <div class="business-name">
+                                                        <a href="view-business.html">Kenya Power and Lighting Company</a>
+                                                        <small>- Service Industry</small>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- /. media -->
+                                            <div class="media"> <!-- /. media -->
+                                                <img class="business-logo" src="images/logos/ntv.png">
+                                                <div class="media-body">
+                                                    <div class="business-name">
+                                                        <a href="view-business.html">Nation Media Group</a>
+                                                        <small>- Service Industry</small>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- /. media -->                  
+                                        </div> <!-- /. listing-block -->
+                                        <div class="col-sm-8 map-box mx-0 px-0">
+                                            <iframe width="100%" height="495" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=Nairobi%20Kenya+(WeConnect)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"></iframe>
+                                        </div>
+                                    </div> <!-- /. row -->
+                                </div> <!-- /. container-fluid -->
+                            </section>
+                        </div> <!-- /. dc-box-wrapper -->
+                    </div>
+                    <div class="col-sm-1">
+                    </div>
+                </div> <!-- /. row -->
+            </div><!-- /.container -->
+    
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js"></script>
+    <script>
+        $(function(){
+        $('.listing-block').slimScroll({
+            height: '500px'
+        });
+    });
+    </script>
+
+    </body>
+</html>

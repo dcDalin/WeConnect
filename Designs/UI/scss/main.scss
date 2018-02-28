@@ -1,0 +1,326 @@
+// Bring in Bootstrap
+@import 'vendor/bootstrap';
+@import 'vendor/variables';
+
+$nav-height: 300px;
+$dc-blue: #3498db;
+$main-color: #fff;
+
+/* custom styling */
+body{
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+}
+
+a{
+    color: #92badd;
+    display:inline-block;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+h2{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display:inline-block;
+    margin: 40px 8px 10px 8px;
+    color: $dc-blue;
+}
+
+h3{
+    text-align: center;
+    font-size: 16px;
+    display:inline-block;
+    color: $dc-blue;
+}
+
+/* customize default bootstrap4 nav */
+.navbar{
+    width:100%;
+    background:none !important;
+    padding: 3em 3em;
+    font-size: 18px;
+
+    @media(max-width: 34em) {
+        background: $main-color !important;
+    }
+    .navbar-toggler{
+        cursor:pointer;
+        outline:0;
+    }
+
+    .nav-item{
+        padding: 0 1rem;
+
+        @media(max-width: 34em){
+            padding: 0;
+        }
+
+        .nav-link {
+            color: $dc-blue;
+            @media(max-width: 34em){
+                font-weight:normal;
+                color: $main-color !important;
+            }
+        }
+    }
+
+    /* change the effect of active or hovered links */
+    .nav-item.active .nav-link,
+    .nav-item:hover .nav-link{
+        border-bottom: 3px solid $dc-blue;
+    }
+}
+
+/* wrapper with a touch of shade */
+
+.dc-box-wrapper{
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: $main-color;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    text-align: center;
+}
+.dc-box-wrapper-footer{
+    background-color: #f6f6f6;
+    border-top: 1px solid #dce8f1;
+    padding: 10px;
+    text-align: center;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+// Button styles 
+button, input[type=button], input[type=submit], input[type=reset]{
+    background-color: #56baed;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.dc-form{
+    margin: auto;
+    width: 100%;
+    padding: 15px 22px 15px 15px;
+}
+
+button, input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover{
+    background-color: #39ace7;
+}
+
+button, input[type=button]:active, input[type=submit]:active, input[type=reset]:active{
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    -o-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+select, option, input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email]{
+    background-color: #f6f6f6;
+    border: none;
+    color: #0d0d0d;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+select, option, input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email]:placeholder{
+    color: #cccccc;
+}
+
+#icon{
+    width:60%;
+}
+
+// Company Logo logo container and stuff
+.media{
+    margin-bottom: 15px;
+    background: $main-color; 
+    position: relative; 
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    .business-name{ 
+        width: 100%; 
+        font-size: 18px;
+        font-weight: 300; 
+        text-align: left;
+        display:inline-block;
+        color: $dc-blue;
+    }
+    .business-name small{
+        display: block; 
+        font-size: 14px; 
+        color: #232323;
+    }
+    .address{
+        float: left; 
+        width: 100%;
+        font-size: 12px; 
+        margin-top: 5px; 
+        color: #888;
+    }
+    .business-logo{
+        width: 100px;
+        margin: 0; 
+        padding: 10px;
+        height: 100px;
+        -webkit-border-radius: 10px 0px 0px 10px;
+        border-radius: 10px 0px 0px 10px;
+    }
+    // custom styling for more info about business
+    .more-business-logo{
+        width: 200px;
+        margin: 0; 
+        padding: 10px;
+        height: 200px;
+        -webkit-border-radius: 10px 0px 0px 10px;
+        border-radius: 10px 0px 0px 10px;
+    }
+    .more-business-name{ 
+        width: 100%; 
+        font-size: 22px;
+        font-weight: 300; 
+        text-align: left;
+        display:inline-block;
+        color: $dc-blue;
+        padding: 10px;
+    }
+    .more-business-name small{
+        display: block; 
+        font-size: 12px; 
+        color: #232323;
+    }
+}
+.badge{
+    padding: 4px 10px;
+}
+.media-body{
+    border: 1px solid 0 30px 60px 0 rgba(118, 106, 195, 0.3);; 
+    border-left: 0; 
+    height: 100px;
+    -webkit-border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.map-box{
+    background-color :#A3CCFF;
+}
+
+/* Profile sidebar */
+.profile-side-menu {
+    padding: 20px 0 10px 0;
+    background: #fff;
+    margin-top: 30px;
+    .dc-side-menu{
+        .side-nav-item{
+            padding-left: 120px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+            display:inline-block;
+            margin: 6px;
+            color: $dc-blue;
+        }
+    }
+}
+// list items
+.profile-side-menu ul li a:hover {
+    background-color: #fafcfd;
+    color: #5b9bd1;
+    border-left: 2px solid #5b9bd1;
+    margin-left: -20px;
+    padding-left: 10px;
+    text-decoration: none !important;
+}
+// active side menu 
+.profile-usermenu ul li.active {
+    border-bottom: none;
+}
+// what happens when you hover
+.profile-side-menu ul li.active a {
+    color: #5b9bd1;
+    background-color: #f6f9fb;
+    border-left: 2px solid #5b9bd1;
+    margin-left: -40px;
+    padding-left: 20px;
+}
+
+.business-comments {
+    margin-bottom: 5px;
+    background: transparent; 
+    position: relative; 
+    padding: 10px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius: none;
+    border-radius: none;
+}
+.reset-media-body{
+    border: 1px solid 0 30px 60px 0 rgba(118, 106, 195, 0.3);; 
+    border-left: 0; 
+    height: 50px;
+    -webkit-border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.title {
+    font-size: 14px;
+    font-weight:bold;
+}
+.komen {
+    font-size:14px;
+}
+.geser {
+    margin-left:55px;
+    margin-top:5px;
+}
+.search-btn{
+    background-color: #56baed;
+    border: none;
+    color: white;
+    padding: 15px 45px;
+    // text-align: center;
+    // text-decoration: none;
+    // display: inline-block;
+    // text-transform: uppercase;
+    // font-size: 13px;
+    // -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    // box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
+    // -webkit-border-radius: 5px 5px 5px 5px;
+    // border-radius: 5px 5px 5px 5px;
+    // margin: 5px 20px 40px 20px;
+}
