@@ -7018,7 +7018,6 @@ h3 {
   border-radius: 10px 10px 10px 10px;
   background: #fff;
   padding: 0px;
-  width: 90%;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
   box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
   text-align: center; }
@@ -7091,3 +7090,51 @@ input[type=text], input[type=tel], input[type=number], input[type=password], inp
 
 #icon {
   width: 60%; }
+
+.media {
+  margin-bottom: 15px;
+  background: #fff;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px; }
+
+.media img {
+  width: 100px;
+  margin: 0;
+  padding: 10px;
+  height: 100px;
+  -webkit-border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0px 0px 10px; }
+
+.media-body {
+  border: 1px solid 0 30px 60px 0 rgba(118, 106, 195, 0.3);
+  border-left: 0;
+  height: 100px;
+  -webkit-border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 10px 10px 0px; }
+
+.media .price {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: left;
+  display: inline-block;
+  color: #3498db; }
+
+.media .price small {
+  display: block;
+  font-size: 14px;
+  color: #232323; }
+
+.media .address {
+  float: left;
+  width: 100%;
+  font-size: 12px;
+  margin-top: 5px;
+  color: #888; }
+
+.map-box {
+  background-color: #A3CCFF; }

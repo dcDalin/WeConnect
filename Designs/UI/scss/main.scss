@@ -46,21 +46,21 @@ h3{
     @media(max-width: 34em) {
         background: $main-color !important;
     }
-    .navbar-toggler {
+    .navbar-toggler{
         cursor:pointer;
         outline:0;
     }
 
-    .nav-item {
+    .nav-item{
         padding: 0 1rem;
 
-        @media(max-width: 34em) {
+        @media(max-width: 34em){
             padding: 0;
         }
 
         .nav-link {
             color: $dc-blue;
-            @media(max-width: 34em) {
+            @media(max-width: 34em){
                 font-weight:normal;
                 color: $main-color !important;
             }
@@ -69,19 +69,18 @@ h3{
 
     /* change the effect of active or hovered links */
     .nav-item.active .nav-link,
-    .nav-item:hover .nav-link {
+    .nav-item:hover .nav-link{
         border-bottom: 3px solid $dc-blue;
     }
 }
 
 /* wrapper with a touch of shade */
 
-.dc-box-wrapper {
+.dc-box-wrapper{
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     background: $main-color;
     padding: 0px;
-    width: 90%;
     -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
     text-align: center;
@@ -95,7 +94,7 @@ h3{
     border-radius: 0 0 10px 10px;
 }
 
-// Button styles
+// Button styles 
 button, input[type=button], input[type=submit], input[type=reset]{
     background-color: #56baed;
     border: none;
@@ -123,11 +122,11 @@ button, input[type=button], input[type=submit], input[type=reset]{
     padding: 15px 22px 15px 15px;
 }
 
-button, input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+button, input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover{
     background-color: #39ace7;
 }
 
-button, input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+button, input[type=button]:active, input[type=submit]:active, input[type=reset]:active{
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -o-transform: scale(0.95);
@@ -135,7 +134,7 @@ button, input[type=button]:active, input[type=submit]:active, input[type=reset]:
     transform: scale(0.95);
 }
 
-input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email] {
+input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email]{
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;
@@ -154,12 +153,64 @@ input[type=text], input[type=tel], input[type=number], input[type=password], inp
     transition: all 0.5s ease-in-out;
     -webkit-border-radius: 5px 5px 5px 5px;
     border-radius: 5px 5px 5px 5px;
-  }
+}
 
-  input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email]:placeholder {
+input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email]:placeholder{
     color: #cccccc;
-  }
+}
 
-  #icon {
+#icon{
     width:60%;
-  }
+}
+
+// Custom code for home page
+.media{
+    margin-bottom: 15px;
+    background: $main-color; 
+    position: relative; 
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+.media img{
+    width: 100px;
+    margin: 0; 
+    padding: 10px;
+    height: 100px;
+    -webkit-border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0px 0px 10px;
+}
+.media-body{
+    border: 1px solid 0 30px 60px 0 rgba(118, 106, 195, 0.3);; 
+    border-left: 0; 
+    height: 100px;
+    -webkit-border-radius: 0px 10px 10px 0px;
+    border-radius: 0px 10px 10px 0px;
+}
+.media .price{ 
+    width: 100%; 
+    font-size: 18px;
+    font-weight: 300; 
+    text-align: left;
+    display:inline-block;
+    color: $dc-blue;
+}
+.media .price small{
+    display: block; 
+    font-size: 14px; 
+    color: #232323;
+}
+
+.media .address{
+    float: left; 
+    width: 100%;
+    font-size: 12px; 
+    margin-top: 5px; 
+    color: #888;
+}
+
+.map-box{
+    background-color :#A3CCFF;
+}
