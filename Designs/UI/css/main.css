@@ -7066,7 +7066,7 @@ button, input[type=button]:active, input[type=submit]:active, input[type=reset]:
   -ms-transform: scale(0.95);
   transform: scale(0.95); }
 
-input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email] {
+select, option, input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -7085,7 +7085,7 @@ input[type=text], input[type=tel], input[type=number], input[type=password], inp
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px; }
 
-input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email]:placeholder {
+select, option, input[type=text], input[type=tel], input[type=number], input[type=password], input[type=email]:placeholder {
   color: #cccccc; }
 
 #icon {
@@ -7100,14 +7100,30 @@ input[type=text], input[type=tel], input[type=number], input[type=password], inp
   box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px; }
-
-.media img {
-  width: 100px;
-  margin: 0;
-  padding: 10px;
-  height: 100px;
-  -webkit-border-radius: 10px 0px 0px 10px;
-  border-radius: 10px 0px 0px 10px; }
+  .media .business-name {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: left;
+    display: inline-block;
+    color: #3498db; }
+  .media .business-name small {
+    display: block;
+    font-size: 14px;
+    color: #232323; }
+  .media .address {
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #888; }
+  .media .business-logo {
+    width: 100px;
+    margin: 0;
+    padding: 10px;
+    height: 100px;
+    -webkit-border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0px 0px 10px; }
 
 .media-body {
   border: 1px solid 0 30px 60px 0 rgba(118, 106, 195, 0.3);
@@ -7116,25 +7132,37 @@ input[type=text], input[type=tel], input[type=number], input[type=password], inp
   -webkit-border-radius: 0px 10px 10px 0px;
   border-radius: 0px 10px 10px 0px; }
 
-.media .price {
-  width: 100%;
-  font-size: 18px;
-  font-weight: 300;
-  text-align: left;
-  display: inline-block;
-  color: #3498db; }
-
-.media .price small {
-  display: block;
-  font-size: 14px;
-  color: #232323; }
-
-.media .address {
-  float: left;
-  width: 100%;
-  font-size: 12px;
-  margin-top: 5px;
-  color: #888; }
-
 .map-box {
   background-color: #A3CCFF; }
+
+/* Profile sidebar */
+.profile-side-menu {
+  padding: 20px 0 10px 0;
+  background: #fff;
+  margin-top: 30px; }
+  .profile-side-menu .dc-side-menu .side-nav-item {
+    padding-left: 120px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    margin: 6px;
+    color: #3498db; }
+
+.profile-side-menu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -20px;
+  padding-left: 10px;
+  text-decoration: none !important; }
+
+.profile-usermenu ul li.active {
+  border-bottom: none; }
+
+.profile-side-menu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -40px;
+  padding-left: 20px; }
