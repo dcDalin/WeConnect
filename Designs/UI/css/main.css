@@ -7124,6 +7124,28 @@ select, option, input[type=text], input[type=tel], input[type=number], input[typ
     height: 100px;
     -webkit-border-radius: 10px 0px 0px 10px;
     border-radius: 10px 0px 0px 10px; }
+  .media .more-business-logo {
+    width: 200px;
+    margin: 0;
+    padding: 10px;
+    height: 200px;
+    -webkit-border-radius: 10px 0px 0px 10px;
+    border-radius: 10px 0px 0px 10px; }
+  .media .more-business-name {
+    width: 100%;
+    font-size: 22px;
+    font-weight: 300;
+    text-align: left;
+    display: inline-block;
+    color: #3498db;
+    padding: 10px; }
+  .media .more-business-name small {
+    display: block;
+    font-size: 12px;
+    color: #232323; }
+
+.badge {
+  padding: 4px 10px; }
 
 .media-body {
   border: 1px solid 0 30px 60px 0 rgba(118, 106, 195, 0.3);
@@ -7166,3 +7188,31 @@ select, option, input[type=text], input[type=tel], input[type=number], input[typ
   border-left: 2px solid #5b9bd1;
   margin-left: -40px;
   padding-left: 20px; }
+
+.business-comments {
+  margin-bottom: 5px;
+  background: transparent;
+  position: relative;
+  padding: 10px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-border-radius: none;
+  border-radius: none; }
+
+.reset-media-body {
+  border: 1px solid 0 30px 60px 0 rgba(118, 106, 195, 0.3);
+  border-left: 0;
+  height: 50px;
+  -webkit-border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 10px 10px 0px; }
+
+.title {
+  font-size: 14px;
+  font-weight: bold; }
+
+.komen {
+  font-size: 14px; }
+
+.geser {
+  margin-left: 55px;
+  margin-top: 5px; }
