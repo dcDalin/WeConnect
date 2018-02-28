@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,7 +6,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>We Connect | Profile</title>
+        <title>We Connect | Signup</title>
 
         <!-- Bootstrap core CSS -->
         <link href="css/main.css" rel="stylesheet">
@@ -20,8 +19,8 @@
             </a>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link text-primary" href="index.html">Profile <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary" href="profile.html">Profile <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-primary" href="businesses.html">Businesses</a>
@@ -53,7 +52,7 @@
                         <!-- SIDEBAR MENU -->
                         <div class="profile-side-menu">
                             <ul class="navbar-nav dc-side-menu">
-                                <li class="side-nav-item active">
+                                <li class="side-nav-item">
                                     <a href="profile.html">Profile - My Businesses </a>
                                 </li>
                                 <li class="side-nav-item">
@@ -73,61 +72,60 @@
                 </div>
                 <div class="col-sm">
                     <div class="dc-box-wrapper">
-                        <div class="row">
-                            <div class="col">
-                                <div class="media"> <!-- /. media -->
-                                    <img class="more-business-logo" src="images/logos/cic.jpg">
-                                    <div class="more-media-body">
-                                        <div class="more-business-name">
-                                            CIC Insurance
-                                            <small>
-                                                    CIC Insurance Group Limited, 
-                                                    commonly referred to as CIC Group, is an insurance and investment group 
-                                                    that operates mainly in Kenya, Uganda, South Sudan and Malawi.
-                                            </small>
-                                            <br>
-                                            <small>
-                                                <a href="edit-business.html" class="badge badge-primary">Edit</a> 
-                                                <a href="#" class="badge badge-danger">Delete</a>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div> <!-- /. media -->
-                            </div>
+                        <div>
+                            <h2>EDIT BUSINESS</h2>
                         </div>
-                        <h2>Comments</h2>
-                        <div class="row">
-                            <div class="col-sm-4">
-                            </div>
-                            <div class="col">
-                                <div class="media business-comments">
-                                    <div class="media-left">
-                                        <img src="http://fakeimg.pl/50x50" class="media-object" style="width:40px">
-                                    </div>
-                                    <div class="media-body reset-media-body">
-                                        <p class="komen">
-                                           <strong>Mike Kay </strong>Amazing Insurance Cover<br>
-                                            <a href="#" class="badge badge-info">Reply</a>
-                                        </p>
-                                    </div>
+                        <form class="dc-form">
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" id="businessName" value="CIC Insurance">
                                 </div>
-                                <hr>    
-                                <div class="geser">
-                                    <div class="media business-comments">
-                                    <div class="media-left">
-                                        <img src="http://fakeimg.pl/50x50" class="media-object" style="width:40px">
-                                    </div>
-                                    <div class="media-body">
-                                        <p class="komen">
-                                           <strong>Eunice Mambo </strong> Yes, they are good<br>
-                                            <a href="#" class="badge badge-info">Reply</a>
-                                        </p>
-                                    </div>
-                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="businessEmail" value="info@cic.co.ke">
                                 </div>
                             </div>
-                        </div>
-                    </div> <!-- /. dc-box-wrapper -->
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" id="email" value="cic@gmail.com">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <input type="text" class="form-control" id="password" value="3893833">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="cpassword" value="CBD">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" id="password" value="23433">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="cpassword" value="32334">
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="cpassword" value="Nairobi">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <select name="category" id="" class="form-control">
+                                        <option value="">Service</option>
+                                        <option value="">Service</option>
+                                        <option value="">Merchandising</option>
+                                        <option value="">Manufacturing</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit">EDIT Business</button>
+                            </div>
+                            <br>
+                        </form>
+
+					</div> <!-- /. dc-box-wrapper -->
                 </div>
 			</div> <!-- /. row -->
             <div class="row">
