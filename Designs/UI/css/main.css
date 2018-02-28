@@ -7054,7 +7054,7 @@ button, input[type=button], input[type=submit], input[type=reset] {
 
 .dc-form {
   margin: auto;
-  width: 90%;
+  width: 100%;
   padding: 15px 22px 15px 15px; }
 
 button, input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
