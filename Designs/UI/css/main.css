@@ -7216,3 +7216,9 @@ select, option, input[type=text], input[type=tel], input[type=number], input[typ
 .geser {
   margin-left: 55px;
   margin-top: 5px; }
+
+.search-btn {
+  background-color: #56baed;
+  border: none;
+  color: white;
+  padding: 15px 45px; }
