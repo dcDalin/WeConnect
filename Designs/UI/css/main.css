@@ -6987,9 +6987,10 @@ h3 {
 /* customize default bootstrap4 nav */
 .navbar {
   width: 100%;
-  background: none !important;
   padding: 3em 3em;
+  background: none !important;
   font-size: 18px;
+  background-color: #2c3e50;
   /* change the effect of active or hovered links */ }
   @media (max-width: 34em) {
     .navbar {
@@ -7014,6 +7015,16 @@ h3 {
 
 /* wrapper with a touch of shade */
 .dc-box-wrapper {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+  height: 100%; }
+
+.search-box-wrapper {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   background: #fff;
@@ -7155,7 +7166,10 @@ select, option, input[type=text], input[type=tel], input[type=number], input[typ
   border-radius: 0px 10px 10px 0px; }
 
 .map-box {
-  background-color: #A3CCFF; }
+  background-color: #A3CCFF;
+  padding: 0px;
+  margin: 0px;
+  height: 100%; }
 
 /* Profile sidebar */
 .profile-side-menu {
