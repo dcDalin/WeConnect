@@ -1,5 +1,14 @@
-def create_user(data):
-    pass
+class WeConnect(object):
+    
 
-def create_business(data):
-    pass
+    def __init__(self):
+        pass
+
+    def create_user(self):
+        pass
+
+    def create_business(self, data):
+        pass
+
+    def show_business(self):
+        pass

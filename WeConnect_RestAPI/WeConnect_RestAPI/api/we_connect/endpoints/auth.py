@@ -2,7 +2,7 @@ import logging
 
 from flask import request
 from flask_restplus import Resource
-from WeConnect_RestAPI.api.we_connect.business import create_user
+from WeConnect_RestAPI.api.we_connect.business import WeConnect
 from WeConnect_RestAPI.api.we_connect.serializers import new_user_structure, login_structure, logout_structure, reset_pass_structure
 from WeConnect_RestAPI.api.restplus import api
 
