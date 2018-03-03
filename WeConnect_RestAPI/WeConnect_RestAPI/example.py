@@ -87,7 +87,7 @@ class Todo(Resource):
     def put(self, id):
         '''Update a task given its identifier'''
         return DAO.update(id, api.payload)
-
+ 
 
 if __name__ == '__main__':
     app.run(debug=True)

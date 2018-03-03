@@ -31,3 +31,11 @@ new_business_structure = api.model('Business', {
     'businessEmail': fields.String(required=True, description='Email address of a Business'),
     'date_created': fields.DateTime,
 })
+
+view_business_structure = api.model('View Business', {
+    'businessId': fields.Integer(readOnly=True, description='The business unique identifier'),
+    'businessName': fields.String(required=True, description='Name of a Business'),
+    'businessCategory': fields.String(required=True, description='Category of a Business'),
+    'businessEmail': fields.String(required=True, description='Email address of a Business'),
+    'date_created': fields.DateTime,
+})
