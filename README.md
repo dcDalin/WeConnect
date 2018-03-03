@@ -9,28 +9,25 @@ Table of contents
 =================
 
 <!--ts-->
-   * [gh-md-toc](#gh-md-toc)
-   * [Table of contents](#table-of-contents)
-   * [Installation](#installation)
-   * [Usage](#usage)
-      * [STDIN](#stdin)
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
-      * [Multiple files](#multiple-files)
-      * [Combo](#combo)
-      * [Auto insert and update TOC](#auto-insert-and-update-toc)
-   * [Tests](#tests)
-   * [Dependency](#dependency)
+   * [Client Side](#client-side)
+      * [Getting Started](#stdin)
+      * [Install](#local-files)
+      * [Video Guide](#remote-files)
+   * [Server Side](#server-side)
+        * [Getting Started](#stdin)
+        * [Install](#local-files)
+   * [Author](#author)
+   * [License](#license)
+
 <!--te-->
 
-
-
-
-## Getting Started
+## Client Side
+### Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
-### Install
+#### Install
+
 
 ```sh
 $ npm install -g bower
@@ -38,15 +35,29 @@ $ npm install -g bower
 
 Bower depends on [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/).
 
-#### Video Guide
+##### Video Guide
 [![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/watch?v=7jy5d27jmrY)
-### Usage
+#### Usage
 
 ```sh
 # install dependencies listed in bower.json
 
 $ bower install
 ```
+
+## Server Side
+### Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+
+#### Install
+
+
+```sh
+$ npm install -g bower
+```
+
+Bower depends on [Node.js](http://nodejs.org/) and [npm](http://npmjs.org/).
 
 ## Author
 
