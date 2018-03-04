@@ -3,7 +3,7 @@ import logging
 from flask import request
 from flask_restplus import Resource
 from WeConnect_RestAPI.api.we_connect.business import WeConnect
-from WeConnect_RestAPI.api.we_connect.serializers import new_business_structure, view_business_structure
+from WeConnect_RestAPI.api.we_connect.serializers import NEW_BUSINESS_STRUCTURE, view_business_structure
 from WeConnect_RestAPI.api.restplus import api
 
 log = logging.getLogger(__name__)
@@ -16,14 +16,13 @@ initWeConnect = WeConnect()
 class RegisterBusiness(Resource, WeConnect):
 
 
-
-    @api.expect(new_business_structure)
-    @ns.marshal_with(new_business_structure, envelope="data", code=201)
+    @ns.expect(NEW_BUSINESS_STRUCTURE, validate=True, code=201)
+    #@api.doc(params={'id': 'An ID'})
     def post(self):
         """
         Register a business.
         """
-        return initWeConnect.create_business(api.payload), 201
+        return initWeConnect.create_business(api.payload)
 
     @ns.marshal_with(view_business_structure, envelope="data", code=201)
     def get(self):
@@ -53,8 +52,8 @@ class ShowBusiness(Resource):
         return '', 204
 
 
-    @ns.expect(new_business_structure)
-    @ns.marshal_with(new_business_structure)
+    @ns.expect(NEW_BUSINESS_STRUCTURE)
+    @ns.marshal_with(NEW_BUSINESS_STRUCTURE)
     def put(self, businessId):
         """
         Updates a business profile.

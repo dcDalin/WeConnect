@@ -1,3 +1,6 @@
+import datetime
+from WeConnect_RestAPI.api.restplus import api
+
 class WeConnect(object):
     
 
@@ -12,14 +15,18 @@ class WeConnect(object):
         self.reviews_counter = 0
         self.reviews = []
   
-    def create_user(self):
+    def create_user(self): 
         pass
 
     def create_business(self, data):
         business = data
         business['businessId'] = self.business_counter = self.business_counter + 1
-        self.businesses.append(business)
-        return business
+        business['date_created'] = datetime.datetime.now()
+        if (business['businessCategory'].strip() == '') or (business['businessEmail'].strip() == '') or (business['businessName'].strip() == ''):
+            return {'error': 'Empty field(s)'}
+        else:
+            self.businesses.append(business)
+            return {'result': 'Business added'}, 201
 
     def show_all_businesses(self):
         return self.businesses
@@ -28,8 +35,7 @@ class WeConnect(object):
         for business in self.businesses:
             if business['businessId'] == businessId:
                 return business
-        return {'result' : 'Error'}, 404
-        #api.abort(404, "Todo {} doesn't exist".format(businessId))
+            api.abort(404, "Todo {} doesn't exist".format(businessId))
 
     def update_business_by_businessId(self, businessId, data):
         business = self.show_business_by_businessId(businessId)

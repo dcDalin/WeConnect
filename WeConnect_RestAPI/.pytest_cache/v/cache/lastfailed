@@ -1,0 +1,5 @@
+{
+  "WeConnect_RestAPI/Tests/test_we_connect.py::APITest": true,
+  "WeConnect_RestAPI/Tests/test_we_connect.py::APITest::test_root_endpoint_lazy": true,
+  "WeConnect_RestAPI/Tests/test_we_connect.py::TestWeConnect::test_root_endpoint": true
+}
