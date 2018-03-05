@@ -27,7 +27,7 @@ reset_pass_structure = api.model('Reset User Password', {
 
 NEW_BUSINESS_STRUCTURE = api.model('Business', {
     'businessName': fields.String(required=True, description='The name of a Business'),
-    'businessCategory': fields.String(required=True, description='Category of a Business'),
+    'businessCategory': fields.String(required=True, description='Category of a Business', enum=['Service', 'Merchandising', 'Manufacturing']),
     'businessEmail': fields.String(required=True, description='Email address of a Business'),
 })
 
