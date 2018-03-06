@@ -1,10 +1,9 @@
 import unittest
 import json
-
-
 from WeConnect_RestAPI.app import app as the_app, initialize_app
 
-class TestSomething(unittest.TestCase):
+
+class TestAuthRoute(unittest.TestCase):
 
     def setUp(self):
         # creates a test client
@@ -15,20 +14,15 @@ class TestSomething(unittest.TestCase):
     def tearDown(self):
         pass 
 
-    
-    def test_businesses_endpoint(self):
-        # sends HTTP GET request to the businesses endpoint
-        response = self.app.get('/api/v1/businesses/')
-        self.assertEqual(response.status_code, 200) 
-
 
     def test_create_user(self):
+        #test if new user is successfuly created
         response = self.app.post('/api/v1/auth/register', data = {
-            "firstName": '',
-            "lastName": '',
-            "email": '',
-            "gender": '',
-            "password": ''
+            "firstName": 'Test',
+            "lastName": 'Test',
+            "email": 'test@test.com',
+            "gender": 'Female',
+            "password": 'password'
         })
         self.assertEqual(response.status_code, 200)
 

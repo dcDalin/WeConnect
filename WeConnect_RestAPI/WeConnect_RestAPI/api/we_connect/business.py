@@ -22,7 +22,7 @@ class WeConnectUsers(object):
             return {'message': 'Wrong email'}
         else:
             self.users.append(user)
-            return user
+            return {'message': 'successful'}
 
 
 

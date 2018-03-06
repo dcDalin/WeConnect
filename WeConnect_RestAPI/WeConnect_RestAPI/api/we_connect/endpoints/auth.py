@@ -3,25 +3,26 @@ import logging
 from flask import request
 from flask_restplus import Resource
 from WeConnect_RestAPI.api.we_connect.business import WeConnectUsers
-from WeConnect_RestAPI.api.we_connect.serializers import NEW_USER_STRUCTURE, login_structure, logout_structure, reset_pass_structure
+from WeConnect_RestAPI.api.we_connect.serializers import (NEW_USER_STRUCTURE, 
+    login_structure, logout_structure, reset_pass_structure)
 from WeConnect_RestAPI.api.restplus import api
 
 log = logging.getLogger(__name__)
 
 ns = api.namespace('auth', description='Operations related to Authentication')
 
-initWeConnectUsers = WeConnectUsers()
+init_we_connect_users = WeConnectUsers()
 
 @ns.route('/register')
 class RegisterUser(Resource, WeConnectUsers):
 
-    @api.doc(responses={403: 'Not Authorized', 404: 'Not Found', 201: 'User added', 400: 'Bad request'})
+    @api.doc(responses={403: 'Not Authorized', 404: 'Not Found'})
     @api.expect(NEW_USER_STRUCTURE, validate=True, code=201)
     def post(self):
         """
         Creates a user account.
         """ 
-        return initWeConnectUsers.create_user(api.payload)
+        return init_we_connect_users.create_user(api.payload)
     
 @ns.route('/login')
 class LoginUser(Resource):
@@ -61,4 +62,4 @@ class ShowAllUsers(Resource, WeConnectUsers):
         """
         Returns all users.
         """
-        return initWeConnectUsers.show_all_users()
+        return init_we_connect_users.show_all_users()
