@@ -1,13 +1,12 @@
 from flask_restplus import fields
 from WeConnect_RestAPI.api.restplus import api
 
-new_user_structure = api.model('User', {
-    '_id': fields.Integer(readOnly=True, description='The unique identifier of a User'),
-    'first_name': fields.String(required=True, description='First name of a User'),
-    'last_name': fields.String(required=True, description='Last name of a User'),
-    'email': fields.String(required=True, description='Email address of a User'),
-    'password': fields.String(required=True, description='The password of a User'),
-    'date_created': fields.DateTime,
+NEW_USER_STRUCTURE = api.model('User', {
+    'firstName': fields.String(required=False, description='First name of a User'),
+    'lastName': fields.String(required=False, description='Last name of a User'),
+    'email': fields.String(required=False, description='Email address of a User'),
+    'gender': fields.String(required=False, description='Gender of a User', enum=['Male', 'Female', 'Other']),
+    'password': fields.String(required=False, description='The password of a User'),
 })
 
 login_structure = api.model('Login User', {

@@ -17,16 +17,16 @@ class RegisterBusiness(Resource):
     #@api.doc(params={'id': 'An ID'})
     def post(self):
         """
-        Register a business.
+        Registerregister a business.
         """
         pass
 
-    @ns.marshal_with(view_business_structure, envelope="data", code=201)
+
     def get(self):
         """
         Retrieves all businesses.
         """
-        pass
+        return {'business': 'the business'}
 
 
 @ns.route('/<int:businessId>')

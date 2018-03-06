@@ -28,12 +28,14 @@ def initialize_app(flask_app):
     api.add_namespace(auth_namespace)
     api.add_namespace(businesses_namespace)
     flask_app.register_blueprint(blueprint)
+    return flask_app
 
 
-def main():
-    initialize_app(app)
+
+def main(app):
+    app = initialize_app(app)
     log.info('>>>>> Starting development server at http://{}/api/v1 <<<<<'.format(app.config['SERVER_NAME']))
     app.run(debug=settings.FLASK_DEBUG)
 
 if __name__ == "__main__":
-    main()
+    main(app)
