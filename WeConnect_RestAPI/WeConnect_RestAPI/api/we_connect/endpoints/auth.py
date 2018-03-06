@@ -16,7 +16,7 @@ initWeConnectUsers = WeConnectUsers()
 class RegisterUser(Resource, WeConnectUsers):
 
     @api.doc(responses={403: 'Not Authorized', 404: 'Not Found', 201: 'User added', 400: 'Bad request'})
-    #@api.expect(NEW_USER_STRUCTURE, validate=True, code=201)
+    @api.expect(NEW_USER_STRUCTURE, validate=True, code=201)
     def post(self):
         """
         Creates a user account.
@@ -56,6 +56,7 @@ class LoginUser(Resource):
 @ns.route('/all-users')
 class ShowAllUsers(Resource, WeConnectUsers):
     
+    @ns.marshal_with(NEW_USER_STRUCTURE, envelope='data')
     def get(self):
         """
         Returns all users.
