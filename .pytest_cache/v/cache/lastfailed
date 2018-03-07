@@ -1,4 +1,0 @@
-{
-  "WeConnect_RestAPI/tests/test_auth_route.py::TestApp::()::test_ping": true,
-  "WeConnect_RestAPI/tests/test_auth_route.py::TestAuthRoute::test_bucketlist_creation": true
-}
