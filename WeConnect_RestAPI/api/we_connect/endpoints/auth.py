@@ -23,7 +23,7 @@ def token_required(f):
 
         if not token:
             return {'message' : 'Token is missing.'}, 401
-
+ 
         if token != 'mytoken':
             return {'message' : 'Wrong token'}, 401
 

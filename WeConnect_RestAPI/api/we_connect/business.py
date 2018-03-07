@@ -10,6 +10,7 @@ class WeConnectUsers(object):
         '''Constructor method, will have dictionaries in a list'''
         self.users_counter = 0
         self.users = []
+        self.token = []
   
     def check_email_exists(self, search_email):
         '''Check if email'''
