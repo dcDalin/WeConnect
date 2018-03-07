@@ -9,10 +9,9 @@ NEW_USER_STRUCTURE = api.model('User', {
     'password': fields.String(required=False, description='The password of a User'),
 })
 
-login_structure = api.model('Login User', {
+LOGIN_STRUCTURE = api.model('Login User', {
     'email': fields.String(required=True, description='Email address of a User'),
     'password': fields.String(required=True, description='The password of a User'),
-    'last_login': fields.DateTime,
 })
 
 logout_structure = api.model('Logout User', {

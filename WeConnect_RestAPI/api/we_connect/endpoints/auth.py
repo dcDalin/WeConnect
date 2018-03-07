@@ -5,8 +5,8 @@ from flask_restplus import Resource
 from functools import wraps
 from WeConnect_RestAPI.api.we_connect.business import WeConnectUsers
 from WeConnect_RestAPI.api.we_connect.serializers import (NEW_USER_STRUCTURE, 
-    login_structure, logout_structure, reset_pass_structure)
-from WeConnect_RestAPI.api.restplus import api
+    LOGIN_STRUCTURE, logout_structure, reset_pass_structure)
+from WeConnect_RestAPI.api.restplus import api 
 
 log = logging.getLogger(__name__)
 
@@ -15,18 +15,21 @@ ns = api.namespace('auth', description='Operations related to Authentication')
 def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
-        
+
         token = None
 
         if 'X-API-KEY' in request.headers:
             token = request.headers['X-API-KEY']
 
         if not token:
-            return {'message': 'token is missing'}, 401
+            return {'message' : 'Token is missing.'}, 401
+
+        if token != 'mytoken':
+            return {'message' : 'Wrong token'}, 401
 
         print('TOKEN: {}'.format(token))
         return f(*args, **kwargs)
-    
+
     return decorated
 
 init_we_connect_users = WeConnectUsers()
@@ -45,17 +48,17 @@ class RegisterUser(Resource, WeConnectUsers):
 @ns.route('/login')
 class LoginUser(Resource):
     
-    @api.expect(login_structure)
+    @api.expect(LOGIN_STRUCTURE)
     def post(self):
         """
         Logs in a User.
         """
-        pass
+        return init_we_connect_users.login_user(api.payload)
 
 @ns.route('/logout')
-class LoginUser(Resource):
+class LogOut(Resource):
     
-    @api.expect(logout_structure)
+    @api.doc(security='apikey')
     def post(self):
         """
         Logs out a User.
@@ -63,7 +66,7 @@ class LoginUser(Resource):
         pass
 
 @ns.route('/reset-password')
-class LoginUser(Resource):
+class ResetPassword(Resource):
     
     @api.expect(reset_pass_structure)
     def post(self):
@@ -75,7 +78,7 @@ class LoginUser(Resource):
 @ns.route('/all-users')
 class ShowAllUsers(Resource, WeConnectUsers):
     
-    #@ns.marshal_with(NEW_USER_STRUCTURE, envelope='data')
+    
     @api.doc(security='apikey')
     @token_required
     def get(self):

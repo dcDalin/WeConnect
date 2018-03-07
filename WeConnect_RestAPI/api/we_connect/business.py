@@ -16,7 +16,20 @@ class WeConnectUsers(object):
         for find_email in self.users:
             if find_email['email'] == search_email:
                 return True
-                break;
+        return False 
+
+    def check_email_for_login(self, search_email):
+        '''Check if email'''
+        for find_email in self.users:
+            if find_email['email'] == search_email:
+                return find_email
+        return False 
+
+    def check_password_exists(self, search_email):
+        '''Check if email'''
+        for find_email in self.users:
+            if find_email['email'] == search_email:
+                return True
         return False 
 
 
@@ -40,8 +53,22 @@ class WeConnectUsers(object):
             user['last_name'] = user['last_name'].title()
             self.users.append(user)
             return {'message': 'successful'}
-
-
-
+ 
     def show_all_users(self):
         return self.users
+
+    def login_user(self, data):
+        '''Logic behind logging in '''
+        user = data
+        if (is_empty(user['email'])) or (is_empty(user['password'])):
+            return {'message': 'Empty field(s)'}
+        elif is_email(user['email']):
+            return {'message': 'Wrong email'}
+        elif not self.check_email_exists(user['email']):
+            return {'message': 'Email does not exist'}
+        else:
+            a_variable = self.check_email_for_login(user['email'])
+            if check_password_hash(a_variable['password'], user['password']):
+                '''compare password input to saved password'''
+                return {'message': 'logged in'}
+            return {'message': 'wrong creds'}

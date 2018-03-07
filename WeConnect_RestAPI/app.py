@@ -12,12 +12,14 @@ log = logging.getLogger(__name__)
 
 
 def configure_app(flask_app):
+    flask_app.config['SECRET_KEY'] = settings.SECRET_KEY
     flask_app.config['SERVER_NAME'] = settings.FLASK_SERVER_NAME
     flask_app.config['SWAGGER_UI_JSONEDITOR'] = settings.SWAGGER_UI_JSONEDITOR
     flask_app.config['SWAGGER_UI_DOC_EXPANSION'] = settings.RESTPLUS_SWAGGER_UI_DOC_EXPANSION   
     flask_app.config['RESTPLUS_VALIDATE'] = settings.RESTPLUS_VALIDATE
     flask_app.config['RESTPLUS_MASK_SWAGGER'] = settings.RESTPLUS_MASK_SWAGGER
     flask_app.config['ERROR_404_HELP'] = settings.RESTPLUS_ERROR_404_HELP
+    
 
 
 def initialize_app(flask_app):
