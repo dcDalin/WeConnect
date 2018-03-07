@@ -3,6 +3,7 @@ import logging
 from flask import request
 from flask_restplus import Resource
 from WeConnect_RestAPI.api.restplus import api
+from WeConnect_RestAPI.api.we_connect.authentication import token_required
 from WeConnect_RestAPI.api.we_connect.serializers import NEW_BUSINESS_STRUCTURE, NEW_REVIEW_STRUCTURE
 from WeConnect_RestAPI.api.we_connect.business import WeConnectUsers
 
@@ -19,12 +20,16 @@ init_we_connect_users = WeConnectUsers()
 class RegisterBusiness(Resource):
 
     @ns.expect(NEW_BUSINESS_STRUCTURE, code=201)
+    @api.doc(security='apikey')
+    @token_required
     def post(self):
         """
         Registerregister a business.
         """
         return init_we_connect_users.create_business(api.payload)
 
+    @api.doc(security='apikey')
+    @token_required
     def get(self):
         """
         Retrieves all businesses.

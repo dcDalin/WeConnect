@@ -7,10 +7,10 @@ from WeConnect_RestAPI import settings
 log = logging.getLogger(__name__)
 
 authorizations = {
-    'apikey': {
-        'type': 'apiKey',
-        'in': 'header',
-        'name': 'X-API-KEY'
+    'apikey' : {
+        'type' : 'apiKey',
+        'in' : 'header',
+        'name' : 'X-API-KEY'
     }
 }
 

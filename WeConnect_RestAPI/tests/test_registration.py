@@ -44,7 +44,7 @@ class TestAuthLogic(unittest.TestCase):
     def test_registration(self):
         '''Test if new_user_is_added'''
         response = self.init_we_connect_users.create_user(self.data)
-        self.assertEqual(response, {'message': 'successful'})
+        self.assertEqual(response, {'message': 'User added'})
 
     def test_email_exists(self):
         '''Test if email already exists'''
@@ -56,7 +56,7 @@ class TestAuthLogic(unittest.TestCase):
             "password": "password"
         }
         data2 = {
-            "first_name": "Someone",
+            "first_name": "Someone", 
             "last_name": "Else",
             "gender": "Male",
             "email": "mcdalinoluoch@gmail.com",
@@ -66,6 +66,11 @@ class TestAuthLogic(unittest.TestCase):
         response = self.init_we_connect_users.create_user(data2)
         self.assertEqual(response, {'message': 'Email exists'})
 
+    def test_show_all_users(self):
+        '''Test users'''
+        self.init_we_connect_users.create_user(self.data) 
+        response = self.init_we_connect_users.show_all_users()
+        self.assertEqual(response, [self.data])       
 
 if __name__ == '__main__':
     unittest.main()
