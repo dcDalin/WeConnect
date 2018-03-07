@@ -4,13 +4,14 @@ from flask import request, Blueprint
 from flask_restplus import Resource
 from functools import wraps
 from WeConnect_RestAPI.api.we_connect.business import WeConnectUsers
-from WeConnect_RestAPI.api.we_connect.serializers import (NEW_USER_STRUCTURE, 
-    LOGIN_STRUCTURE, logout_structure, reset_pass_structure)
-from WeConnect_RestAPI.api.restplus import api 
+from WeConnect_RestAPI.api.we_connect.serializers import (NEW_USER_STRUCTURE,
+                                                          LOGIN_STRUCTURE, logout_structure, reset_pass_structure)
+from WeConnect_RestAPI.api.restplus import api
 
 log = logging.getLogger(__name__)
 
 ns = api.namespace('auth', description='Operations related to Authentication')
+
 
 def token_required(f):
     @wraps(f)
@@ -22,10 +23,10 @@ def token_required(f):
             token = request.headers['X-API-KEY']
 
         if not token:
-            return {'message' : 'Token is missing.'}, 401
- 
+            return {'message': 'Token is missing.'}, 401
+
         if token != 'mytoken':
-            return {'message' : 'Wrong token'}, 401
+            return {'message': 'Wrong token'}, 401
 
         print('TOKEN: {}'.format(token))
         return f(*args, **kwargs)
@@ -33,6 +34,7 @@ def token_required(f):
     return decorated
 
 init_we_connect_users = WeConnectUsers()
+
 
 @ns.route('/register')
 class RegisterUser(Resource, WeConnectUsers):
@@ -42,12 +44,13 @@ class RegisterUser(Resource, WeConnectUsers):
     def post(self):
         """
         Creates a user account.
-        """ 
+        """
         return init_we_connect_users.create_user(api.payload)
-    
+
+
 @ns.route('/login')
 class LoginUser(Resource):
-    
+
     @api.expect(LOGIN_STRUCTURE)
     def post(self):
         """
@@ -55,9 +58,10 @@ class LoginUser(Resource):
         """
         return init_we_connect_users.login_user(api.payload)
 
+
 @ns.route('/logout')
 class LogOut(Resource):
-    
+
     @api.doc(security='apikey')
     def post(self):
         """
@@ -65,9 +69,10 @@ class LogOut(Resource):
         """
         pass
 
+
 @ns.route('/reset-password')
 class ResetPassword(Resource):
-    
+
     @api.expect(reset_pass_structure)
     def post(self):
         """
@@ -75,10 +80,10 @@ class ResetPassword(Resource):
         """
         pass
 
+
 @ns.route('/all-users')
 class ShowAllUsers(Resource, WeConnectUsers):
-    
-    
+
     @api.doc(security='apikey')
     @token_required
     def get(self):

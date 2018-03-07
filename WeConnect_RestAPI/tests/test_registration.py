@@ -66,6 +66,6 @@ class TestAuthLogic(unittest.TestCase):
         response = self.init_we_connect_users.create_user(data2)
         self.assertEqual(response, {'message': 'Email exists'})
 
-        
+
 if __name__ == '__main__':
     unittest.main()
