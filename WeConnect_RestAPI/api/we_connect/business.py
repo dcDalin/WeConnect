@@ -10,7 +10,12 @@ class WeConnectUsers(object):
         '''Constructor method, will have dictionaries in a list'''
         self.users_counter = 0
         self.users = []
-        self.token = []
+        
+        self.business_counter = 0
+        self.businesses = []
+
+        self.reviews_counter = 0
+        self.reviews = []
   
     def check_email_exists(self, search_email):
         '''Check if email'''
@@ -73,3 +78,28 @@ class WeConnectUsers(object):
                 '''compare password input to saved password'''
                 return {'message': 'logged in'}
             return {'message': 'wrong creds'}
+
+    def create_business(self, data):
+        business = data
+        business['business_id'] = self.business_counter = self.business_counter + 1
+        self.businesses.append(business)
+        return {'result': 'Business added'}, 201
+
+    def show_all_businesses(self):
+        return self.businesses
+
+    def show_business_by_business_id(self, business_id):
+        for business in self.businesses:
+            if business['business_id'] == business_id:
+                return business
+            else:
+                return {'message': 'Business not found'}, 400
+
+    def delete_business_by_business_id(self, business_id):
+        business = self.show_business_by_business_id(business_id)
+        self.businesses.remove(business)
+
+    def update_business_by_business_id(self, business_id, data):
+        business = self.show_business_by_business_id(business_id)
+        business.update(data)
+        return business

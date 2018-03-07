@@ -14,6 +14,20 @@ LOGIN_STRUCTURE = api.model('Login User', {
     'password': fields.String(required=True, description='The password of a User'),
 })
 
+NEW_BUSINESS_STRUCTURE = api.model('Business', {
+    'business_name': fields.String(required=True, description='The name of a Business'),
+    'business_category': fields.String(required=True, description='Category of a Business', enum=['Service', 'Merchandising', 'Manufacturing']),
+    'business_email': fields.String(required=True, description='Email address of a Business'),
+    'business_description': fields.String(required=True, description='The description of a Business'),
+    'business_phone': fields.String(required=True, description='Phone number address of a Business'),
+})
+
+NEW_REVIEW_STRUCTURE = api.model('Review', {
+    'review_title': fields.String(required=True, description='Title of the Review'),
+    'review_message': fields.String(required=True, description='Message of the Review'),
+})
+
+
 logout_structure = api.model('Logout User', {
     'token': fields.String(required=True, description='Logout token')
 })
