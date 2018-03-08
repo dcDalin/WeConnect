@@ -60,15 +60,3 @@ class ResetPassword(Resource):
         Resets User password.
         """
         pass
-
-
-@ns.route('/all-users')
-class ShowAllUsers(Resource, WeConnectUsers):
-
-    @api.doc(security='apikey')
-    @token_required
-    def get(self):
-        """
-        Returns all users.
-        """
-        return init_we_connect_users.show_all_users()

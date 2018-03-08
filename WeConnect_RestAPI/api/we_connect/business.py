@@ -1,3 +1,4 @@
+import re
 import datetime
 from flask import Flask, jsonify, request
 from flask_jwt_extended import (
@@ -50,7 +51,7 @@ class WeConnectUsers(object):
     def create_user(self, data):
         user = data
         user['user_id'] = self.users_counter = self.users_counter + 1
-        user['password'] = generate_password_hash(user['password'])
+        
         # user['dateCreated'] = datetime.datetime.now()
         if (is_empty(user['first_name'])) or (is_empty(user['last_name'])) or (is_empty(user['email'])) or (is_empty(user['gender'])) or (is_empty(user['password'])):
             return {'message': 'Empty field(s)'}
@@ -60,13 +61,18 @@ class WeConnectUsers(object):
             return {'message': 'Email exists'}
         elif is_gender(user['gender']):
             return {'message': 'Wrong gender'}
-        elif is_password(user['password']):
-            return {'message': 'Weak password'}
-        else:
-            user['first_name'] = user['first_name'].title()
-            user['last_name'] = user['last_name'].title()
-            self.users.append(user)
-            return {'message': 'User added'}
+        if len(user['password']) < 8:
+            return {'message': 'Password is less than 8 characters'}
+        if re.search('[0-9]', user['password']) is None:
+            return {'message': 'No numbers present'}
+        if re.search('[A-Z]', user['password']) is None: 
+            return {'message': 'No capital letters present'}
+        
+        user['password'] = generate_password_hash(user['password'])
+        user['first_name'] = user['first_name'].title()
+        user['last_name'] = user['last_name'].title()
+        self.users.append(user)
+        return {'message': 'User added'}
     
 
     
@@ -98,10 +104,6 @@ class WeConnectUsers(object):
 
     def current_logged_in_user(self): 
         return access_token
-
-
-    def show_all_users(self):
-        return self.users
 
 
     '''Business related operations'''
@@ -156,7 +158,8 @@ class WeConnectUsers(object):
                 review = data
                 review['review_id'] = len(self.reviews) + 1
                 review['business_id'] = business_id
-                review['user_email'] = current_email      
+                review['user_email'] = current_email 
+                review['date_created'] = datetime.datetime.now()     
                 self.reviews.append(review)
                 return {'message': 'Review added'}
         return {'message': 'Business with the ID not found'}

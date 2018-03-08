@@ -20,4 +20,12 @@ def is_gender(the_input):
 
 
 def is_password(password):
-    pass
+    while True:
+        if len(password) < 8:
+            return {'message': 'Password is less than 8 characters'}
+        elif re.search('[0-9]',password) is None:
+            return {'message': 'No numbers present'}
+        elif re.search('[A-Z]',password) is None: 
+            return {'message': 'No capital letters present'}
+        else:
+            return True
