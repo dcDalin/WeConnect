@@ -106,7 +106,7 @@ class WeConnectUsers(object):
         business[
             'business_id'] = self.business_counter = self.business_counter + 1
         self.businesses.append(business)
-        return {'result': 'Business added'}
+        return {'message': 'Business added'}
 
     def show_all_businesses(self):
         return self.businesses
