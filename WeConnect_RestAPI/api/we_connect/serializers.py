@@ -52,13 +52,41 @@ NEW_BUSINESS_STRUCTURE = api.model('Business', {
         description='Phone number address of a Business'),
 })
 
-NEW_REVIEW_STRUCTURE = api.model('Review', {
-    'review_title': fields.String(
+
+UPDATE_BUSINESS_STRUCTURE = api.model('Update Business', {
+    'business_name': fields.String(
     required=True,
-    description='Title of the Review'),
-    'review_message': fields.String(
+    description='The name of a Business'),
+    'business_category': fields.String(
         required=True,
-        description='Message of the Review'),
+        description='Category of a Business',
+     enum=['Service',
+           'Merchandising',
+           'Manufacturing']),
+    'business_description': fields.String(
+        required=True,
+        description='The description of a Business'),
+    'business_phone': fields.String(
+        required=True,
+        description='Phone number address of a Business'),
+})
+
+
+NEW_REVIEW_STRUCTURE = api.model('Review', {
+    'review_message': fields.String(
+    required=True,
+    description='The Review'),
+    'review_rating': fields.String(
+        required=True,
+        description='Rating of the Review',
+     enum=['1',
+           '2',
+           '3',
+           '4',
+           '5']),
+    'password': fields.String(
+        required=True,
+        description='The password of a User'),
 })
 
 

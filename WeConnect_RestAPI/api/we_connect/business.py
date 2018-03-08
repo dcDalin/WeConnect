@@ -16,7 +16,6 @@ class WeConnectUsers(object):
         self.users_counter = 0
         self.users = []
 
-        self.business_counter = 0
         self.businesses = []
 
         self.reviews_counter = 0
@@ -28,6 +27,13 @@ class WeConnectUsers(object):
         '''Check if email'''
         for find_email in self.users:
             if find_email['email'] == search_email:
+                return True
+        return False
+    
+    def check_business_email_exists(self, search_email):
+        '''Check if business email exists'''
+        for find_email in self.businesses:
+            if find_email['business_email'] == search_email:
                 return True
         return False
 
@@ -88,6 +94,8 @@ class WeConnectUsers(object):
         if not login_status:
             return {'message': 'wrong creds'}
         global access_token
+        global current_email
+        current_email = user['email']
         access_token = create_access_token(identity=user['email'])
         self.the_token = access_token
         return {"access_token": access_token}
@@ -103,8 +111,14 @@ class WeConnectUsers(object):
     '''Business related operations'''
     def create_business(self, data):
         business = data
-        business[
-            'business_id'] = self.business_counter = self.business_counter + 1
+        business['business_id'] = len(self.businesses) + 1
+        business['user_email'] = current_email
+        if (is_empty(business['business_name'])) or (is_empty(business['business_category'])) or (is_empty(business['business_email'])) or (is_empty(business['business_description'])) or (is_empty(business['business_phone'])):
+            return {'message': 'Empty field(s)'}
+        elif is_email(business['business_email']):
+            return {'message': 'Wrong email'}
+        elif self.check_business_email_exists(business['business_email']):
+            return {'message': 'Email exists'}
         self.businesses.append(business)
         return {'message': 'Business added'}
 
@@ -115,14 +129,18 @@ class WeConnectUsers(object):
         for business in self.businesses:
             if business['business_id'] == business_id:
                 return business
-            else:
-                return {'message': 'Business not found'}
+        return {'message': 'Business not found'}
 
     def delete_business_by_business_id(self, business_id):
         business = self.show_business_by_business_id(business_id)
+        if business['user_email'] != current_email:
+            return {'message': 'You can only delete your business'}
         self.businesses.remove(business)
+        return {'message': 'Business deleted'}
 
     def update_business_by_business_id(self, business_id, data):
         business = self.show_business_by_business_id(business_id)
+        if business['user_email'] != current_email:
+            return {'message': 'You can only update your business'}
         business.update(data)
-        return business
+        return {'message': 'Business updated'}
