@@ -15,12 +15,8 @@ class WeConnectUsers(object):
         '''Constructor method, will have dictionaries in a list'''
         self.users_counter = 0
         self.users = []
-
         self.businesses = []
-
-        self.reviews_counter = 0
         self.reviews = []
-
         self.the_token = ''
 
     def check_email_exists(self, search_email):
@@ -144,3 +140,34 @@ class WeConnectUsers(object):
             return {'message': 'You can only update your business'}
         business.update(data)
         return {'message': 'Business updated'}
+
+    
+    '''Business reviews related operations'''
+
+    def show_existing_business(self, business_id):
+        for business in self.businesses:
+            if business['business_id'] == business_id:
+                return True
+        return {'message': 'Business not found'}
+
+    def add_review_to_businesss(self, business_id, data):
+        for business in self.businesses:
+            if business['business_id'] == business_id:        
+                review = data
+                review['review_id'] = len(self.reviews) + 1
+                review['business_id'] = business_id
+                review['user_email'] = current_email      
+                self.reviews.append(review)
+                return {'message': 'Review added'}
+        return {'message': 'Business with the ID not found'}
+
+    
+
+    def view_business_reviews(self, business_id):
+        for business in self.businesses:
+            if business['business_id'] == business_id:
+                for review in self.reviews:
+                    if review['business_id'] == business_id:
+                        return review
+                return {'message': 'Review for business not found'}
+        return {'message': 'Business with the ID not found'}

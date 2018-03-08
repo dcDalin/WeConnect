@@ -84,9 +84,6 @@ NEW_REVIEW_STRUCTURE = api.model('Review', {
            '3',
            '4',
            '5']),
-    'password': fields.String(
-        required=True,
-        description='The password of a User'),
 })
 
 

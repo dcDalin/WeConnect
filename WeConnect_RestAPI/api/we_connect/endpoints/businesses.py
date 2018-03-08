@@ -75,16 +75,16 @@ class BusinessReviews(Resource):
     @api.doc(security='apikey')
     @token_required
     @ns.expect(NEW_REVIEW_STRUCTURE, code=201)
-    def post(self):
+    def post(self, business_id):
         """
         Add a review for a business.
         """
-        return {'message': 'the review'}
+        return init_we_connect_users.add_review_to_businesss(business_id, api.payload)
 
     @api.doc(security='apikey')
     @token_required
-    def get(self):
+    def get(self, business_id):
         """
         Get all reviews for a business.
         """
-        pass
+        return init_we_connect_users.view_business_reviews(business_id)
