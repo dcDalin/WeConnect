@@ -45,11 +45,11 @@ $ git clone https://github.com/dcDalin/WeConnect.git
 ```sh
 $ cd WeConnect
 ```
-```
+
 ```sh
 $ python3.6 -m venv venv
 ```
-```
+
 ```sh
 $ source .env
 ```
